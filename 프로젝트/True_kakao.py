@@ -1,19 +1,19 @@
 import pywinauto
-from pywinauto.application import Application
 from pywinauto.keyboard import send_keys
-app = Application()
+pwa_app = pywinauto.application.Application()
+
+
+pwa_app.start('c:\Program Files (x86)\Kakao\KakaoTalk\KakaoTalk.exe')
 
 
 
-app.start('c:\Program Files (x86)\Kakao\KakaoTalk\KakaoTalk.exe')
 
 
-
-for i in range(1000):
+for i in range(100000):
     try:
 
         w_handle = pywinauto.findwindows.find_windows(title=u'\uce74\uce74\uc624\ud1a1', class_name='EVA_Window')[0]
-        window = app.window(handle=w_handle)
+        window = pwa_app.window(handle=w_handle)
         window.click_input()
         send_keys('Wlqwndfur423!{ENTER}')
 
@@ -23,3 +23,7 @@ for i in range(1000):
 
 
 
+# w_handle = pywinauto.findwindows.find_windows(title=u'\uce74\uce74\uc624\ud1a1', class_name='EVA_Window')[0]
+# window = pwa_app.window(handle=w_handle)
+# window.click_input()
+# send_keys('Wlqwndfur423!{ENTER}')
